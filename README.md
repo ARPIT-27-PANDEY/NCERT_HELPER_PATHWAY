@@ -2,9 +2,11 @@
 This application is built using Pathway's API with Streamlit as the user interface. The goal of this app is to provide personalized wellness suggestions based on user input, addressing a variety of mental health and well-being concerns.
 
 ## Video Demo of the APP 🎥
-<video src="(https://www.youtube.com/watch?v=Njbt-B1CSnE)" controls="controls"> </video>
-LINK for the Video
+[![Video Demo](https://i9.ytimg.com/vi_webp/Njbt-B1CSnE/mqdefault.webp?sqp=CPSK17cG&rs=AOn4CLBbyfo7n9JYpL1vkECOucLh2zGxeQ)](https://www.youtube.com/watch?v=Njbt-B1CSnE)
 
+Click the image to watch the video demo.
+
+[LINK for the Video](https://www.youtube.com/watch?v=Njbt-B1CSnE)
 ## Description 📝
 The Wellness App leverages Pathway’s powerful API to provide personalized wellness suggestions based on users' unique situations and needs. It combines advanced algorithms with real-time feedback to offer a tailored experience, supporting mental and physical well-being.
 
