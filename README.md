@@ -1,65 +1,125 @@
-# Wellness App for Personalized Suggestions 🌿
-This application is built using Pathway's API with Streamlit as the user interface. The goal of this app is to provide personalized wellness suggestions based on user input, addressing a variety of mental health and well-being concerns.
+# NCERT Helper Question Answering System
 
-## Video Demo of the APP 🎥
-[![Video Demo](https://i9.ytimg.com/vi_webp/Njbt-B1CSnE/mqdefault.webp?sqp=CPSK17cG&rs=AOn4CLBbyfo7n9JYpL1vkECOucLh2zGxeQ)](https://www.youtube.com/watch?v=Njbt-B1CSnE)
+This project is a *NCERT Helper Question Answering System* designed to assist students with their studies by providing accurate and quick answers to NCERT textbook questions. The system uses a *Retrieval-Augmented Generation (RAG)* approach, powered by large language models (LLMs) for generating contextually accurate answers. The project is implemented using *Pathway* and leverages *Streamlit* for its user interface.
 
-Click the image to watch the video demo.
+The application is containerized using *Docker*, ensuring a seamless and reproducible environment for running the application. All dependencies are managed via requirements.txt and installed automatically during the Docker build process. *Gemini API* and *Huggingface API* are used for building the RAG pipeline.
 
-[LINK for the Video](https://www.youtube.com/watch?v=Njbt-B1CSnE)
-## Description 📝
-The Wellness App leverages Pathway’s powerful API to provide personalized wellness suggestions based on users' unique situations and needs. It combines advanced algorithms with real-time feedback to offer a tailored experience, supporting mental and physical well-being.
+---
+### VIDEO DEMO OF THE APP
+https://drive.google.com/file/d/1kYhPRoR28ofsfLW9dG4DKPu8jFuR-Fm2/view?usp=sharing
 
-The Pathway API powers the app by enabling smart, personalized suggestions for a variety of wellness topics like stress, anxiety, and overall self-care. The real-time data pipeline integration allows the app to continuously learn from user inputs and provide accurate and actionable advice.
+## Business Usage
 
-Built with Streamlit, this app offers a seamless user experience, allowing users to easily navigate the interface, input their current wellness concerns, and receive helpful suggestions instantly.
+This NCERT Helper Question Answering System is designed to help students:
 
-## Features 🎁
-* Personalized Wellness Suggestions: Tailored to each user's specific mental health or physical well-being needs.
-* User-Friendly Interface: Streamlit-powered for easy navigation and interaction.
-* Pathway API Integration: Provides real-time, data-driven suggestions without requiring a separate database.
-* Real-Time Feedback: The app learns and adapts to user inputs for improved accuracy.
-* Cross-Platform Deployment: Easily deploy on any platform using Docker.
-* Summary of Available Endpoints 📊
-* The application provides a webserver with the following endpoints:
+- *Personalized Learning*: Provides tailored answers to questions from NCERT textbooks, making learning more interactive and personalized.
+- *Efficiency*: Offers a quick and accurate solution to resolve doubts, saving time for students.
+- *Scalability*: Can be scaled to support a wide range of subjects and grades from NCERT curriculum, helping not only individual students but also educational institutions.
 
-Default URL for backend: `http://0.0.0.0:8000/`
-## Wellness Query and Suggestion Capabilities
-/v1/get_suggestion: Retrieve personalized wellness suggestions based on user input.
+For educational institutions and ed-tech companies, this tool can be integrated as:
 
-/v1/get_feedback: Input real-time feedback to improve suggestions.
+- *A digital assistant for learning apps*, enhancing their offerings by providing immediate help with NCERT curriculum queries.
+- *A homework assistant* that can be integrated into digital classrooms to help students solve problems without teacher intervention.
+- *An AI tutor* for personalized learning environments, allowing students to learn at their own pace.
 
-## Prerequisites 📋
-Before running the app, make sure you have the following installed:
+---
 
-* Python 3.x
-* Git
-* Docker
-## Installation 💻
+## Features
 
-`git clone https://github.com/your-repo-link/wellness-app.git`
+- *RAG Pipeline*: Uses Retrieval-Augmented Generation to combine document retrieval with generative AI for high-quality answers.
+- *Gemini API*: Powers the core LLM for answer generation.
+- *Huggingface API*: Utilized for document retrieval and embeddings.
+- *Streamlit UI*: A simple, interactive web UI for users to input questions and receive answers.
+- *Pathway Integration*: For data processing and retrieval tasks, ensuring high performance and scalability.
 
-Change into the project directory:
+---
+### Features of NCERT Helper Question Answering System 📚
+Personalized Learning Assistance: Tailored answers for students' specific NCERT questions, helping with both general queries and more complex topics.
 
-`cd wellness-app`
+User-Friendly Interface: Powered by Streamlit, ensuring easy navigation and interaction for students of all ages.
 
-Add your Pathway API key to the .env file:
+Pathway Integration: Utilizes the Pathway API for seamless, real-time processing of questions and context retrieval, ensuring high performance without the need for an external database.
 
-PATHWAY_API_KEY=<YOUR_API_KEY>
+Real-Time Feedback: The app adapts based on the questions asked, continually improving the quality of answers for a better user experience.
 
-Build and run the Docker Image:
-
-`docker-compose up`
-Note: Building the image may take 15-20 minutes. ⏳
-
-Access the app in your browser at http://localhost:8501.
+Cross-Platform Deployment: Fully containerized using Docker, allowing the app to be easily deployed on any platform, ensuring consistency across different environments.
 
 
-To stop the program:
 
-`docker-compose down`
-## Future Improvements 🚀
-* Add an in-app wellness assessment tool for a more detailed analysis.
-* Support for audio or visual inputs to enhance interactivity.
-* Advanced analytics to track wellness progress over time.
-Made with 💛 by Vishesh Bhardwaj
+## Tech Stack
+
+- *Pathway*: (version >11.0)
+- *LiteLLM*
+- *Sentence-Transformers*
+- *Gemini API*
+- *Huggingface API*
+- *Streamlit*
+- *Docker*
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- *Docker*: To build and run the application in a containerized environment.
+
+### Installation 💻
+
+1. *Clone the repository*:
+   bash
+   git clone https://github.com/your-repo-link/ncert-helper-app.git
+   
+
+2. *Change into the project directory*:
+   bash
+   cd ncert-helper-app
+   
+
+3. **Add your API keys to the .env file**:
+   Open the .env file and add your API keys for Gemini and Huggingface:
+   bash
+   GEMINI_API_KEY=<YOUR_GEMINI_API_KEY>
+   HUGGINGFACE_API_KEY=<YOUR_HUGGINGFACE_API_KEY>
+   
+
+4. *Build and run the Docker image*:
+   bash
+   docker-compose up
+   
+
+   *Note*: Building the image may take 15-20 minutes. ⏳
+
+5. *Access the app*:
+   Open your browser and go to http://localhost:8501.
+
+6. *To stop the program*:
+   bash
+   docker-compose down
+   
+
+### Usage
+
+1. *Access the Application*: Open your browser and navigate to http://localhost:8501.
+2. *Ask a Question*: Enter an NCERT textbook question into the input field and click "Submit".
+3. *Receive an Answer*: The system retrieves relevant text using the retrieval component of the RAG pipeline and generates an answer using the LLM, which is then displayed in the UI.
+
+
+### Dependencies
+
+Dependencies are specified in the requirements.txt file, which will be automatically installed when the Docker container is built.
+
+---
+
+## How It Works
+
+1. *Document Retrieval*: Using the sentence-transformers library, relevant chunks of text from NCERT textbooks are retrieved based on the student's query.
+2. *Generation*: The Gemini API is used to generate answers based on the retrieved context.
+3. *UI Interaction*: The student interacts with a simple, user-friendly Streamlit UI, submitting queries and receiving instant responses.
+
+
+## Conclusion
+
+This NCERT Helper Question Answering System leverages advanced AI techniques with a focus on student learning and ease of access. The integration of RAG, Gemini, Huggingface, and Pathway ensures high accuracy and fast responses, while Streamlit provides an interactive user interface. This project can be scaled further to cover more subjects and grades, making it an essential tool for modern educational platforms.
