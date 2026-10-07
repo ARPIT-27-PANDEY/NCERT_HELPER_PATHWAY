@@ -49,7 +49,7 @@ Cross-Platform Deployment: Fully containerized using Docker, allowing the app to
 ## Tech Stack
 
 - *Pathway*: (version >11.0)
-- *LiteLLM*
+- *Mistral LLM*
 - *Sentence-Transformers*
 - *Gemini API*
 - *Huggingface API*
