@@ -1,125 +1,138 @@
 # NCERT Helper Question Answering System
 
-This project is a *NCERT Helper Question Answering System* designed to assist students with their studies by providing accurate and quick answers to NCERT textbook questions. The system uses a *Retrieval-Augmented Generation (RAG)* approach, powered by large language models (LLMs) for generating contextually accurate answers. The project is implemented using *Pathway* and leverages *Streamlit* for its user interface.
+The **NCERT Helper Question Answering System** is an AI-powered application designed to assist students with their studies by providing fast, context-aware answers to questions from uploaded educational documents.
 
-The application is containerized using *Docker*, ensuring a seamless and reproducible environment for running the application. All dependencies are managed via requirements.txt and installed automatically during the Docker build process. *Gemini API* and *Huggingface API* are used for building the RAG pipeline.
+The system uses a **Retrieval-Augmented Generation (RAG)** approach to retrieve relevant information from uploaded documents and generate contextually appropriate answers. The core RAG pipeline is implemented using **Pathway**, with **Mistral LLM** used for response generation and **Sentence-Transformers** used for semantic retrieval and embeddings.
+
+The application supports multiple document sources and is designed for real-time document processing and question answering.
+
+The application is **containerized using Docker**, ensuring a reproducible and deployable environment. Dependencies are managed through `requirements.txt` and installed automatically during the Docker build process.
+
+Additional **Gemini API** and **Hugging Face API** components are included for experimentation and supporting parts of the RAG pipeline.
 
 ---
-### VIDEO DEMO OF THE APP
+
+## VIDEO DEMO OF THE APP
+
 https://drive.google.com/file/d/1kYhPRoR28ofsfLW9dG4DKPu8jFuR-Fm2/view?usp=sharing
+
+---
 
 ## Business Usage
 
-This NCERT Helper Question Answering System is designed to help students:
+The NCERT Helper Question Answering System is designed to help students through:
 
-- *Personalized Learning*: Provides tailored answers to questions from NCERT textbooks, making learning more interactive and personalized.
-- *Efficiency*: Offers a quick and accurate solution to resolve doubts, saving time for students.
-- *Scalability*: Can be scaled to support a wide range of subjects and grades from NCERT curriculum, helping not only individual students but also educational institutions.
+- **Personalized Learning:** Provides context-aware answers to questions based on uploaded NCERT and educational documents.
+- **Efficiency:** Enables students to retrieve relevant information quickly instead of manually searching through multiple documents.
+- **Scalability:** Can be extended to support a wide range of subjects, grades, and educational resources.
 
-For educational institutions and ed-tech companies, this tool can be integrated as:
+For educational institutions and ed-tech companies, the system can be integrated as:
 
-- *A digital assistant for learning apps*, enhancing their offerings by providing immediate help with NCERT curriculum queries.
-- *A homework assistant* that can be integrated into digital classrooms to help students solve problems without teacher intervention.
-- *An AI tutor* for personalized learning environments, allowing students to learn at their own pace.
+- **A digital assistant for learning apps**, providing immediate answers to NCERT curriculum queries.
+- **A homework assistant**, helping students solve questions without requiring constant teacher intervention.
+- **An AI tutor**, enabling students to learn at their own pace through interactive question answering.
+
+### E-Commerce Adaptation
+
+The same RAG architecture can be adapted to other domain-specific applications, including **e-commerce customer-support chatbots**.
+
+For example, companies such as **Epto** can use the system to provide real-time responses to customer queries using their internal documents, product information, FAQs, and support resources, with the potential to substantially reduce manual customer-support effort.
 
 ---
 
 ## Features
 
-- *RAG Pipeline*: Uses Retrieval-Augmented Generation to combine document retrieval with generative AI for high-quality answers.
-- *Gemini API*: Powers the core LLM for answer generation.
-- *Huggingface API*: Utilized for document retrieval and embeddings.
-- *Streamlit UI*: A simple, interactive web UI for users to input questions and receive answers.
-- *Pathway Integration*: For data processing and retrieval tasks, ensuring high performance and scalability.
+- **RAG Pipeline:** Uses Retrieval-Augmented Generation to combine semantic document retrieval with LLM-based response generation.
+- **Pathway Integration:** Provides the underlying dataflow pipeline for document ingestion, processing, retrieval, and real-time updates.
+- **Mistral LLM:** Used as the primary language model for generating human-readable answers from retrieved context.
+- **Sentence-Transformers:** Generates semantic embeddings used for identifying relevant document content.
+- **Gemini API:** Included as an additional LLM/API component for experimentation and supporting functionality.
+- **Hugging Face API:** Used for embedding and retrieval-related components.
+- **Streamlit UI:** Provides a simple and interactive chatbot interface for submitting queries and viewing generated responses.
+- **Docker Deployment:** Containerizes the application and its dependencies for reproducible deployment across environments.
+- **Multi-Document Support:** Supports more than **50 files** and **10+ file types**, including PDFs, documents, links, and text files.
+- **Domain Optimization:** The pipeline can be adapted and optimized for domain-specific knowledge bases and pre-loaded datasets.
 
 ---
-### Features of NCERT Helper Question Answering System 📚
-Personalized Learning Assistance: Tailored answers for students' specific NCERT questions, helping with both general queries and more complex topics.
 
-User-Friendly Interface: Powered by Streamlit, ensuring easy navigation and interaction for students of all ages.
+## Features of NCERT Helper Question Answering System 📚
 
-Pathway Integration: Utilizes the Pathway API for seamless, real-time processing of questions and context retrieval, ensuring high performance without the need for an external database.
+### Personalized Learning Assistance
+Provides tailored answers to students' specific NCERT questions, supporting both general queries and more complex topics.
 
-Real-Time Feedback: The app adapts based on the questions asked, continually improving the quality of answers for a better user experience.
+### User-Friendly Interface
+Powered by **Streamlit**, providing simple navigation and interactive chatbot-based question answering.
 
-Cross-Platform Deployment: Fully containerized using Docker, allowing the app to be easily deployed on any platform, ensuring consistency across different environments.
+### Pathway Integration
+Utilizes **Pathway** for real-time data processing and context retrieval, allowing the system to efficiently process changing document sources without requiring a traditional external database.
 
+### Real-Time Responses
+The system retrieves relevant information from uploaded documents and generates context-aware answers for user queries.
 
+### Multi-File Processing
+The application can process **50+ files** at a time across **10+ file types**, including PDFs, documents, links, and text files.
+
+### Cross-Platform Deployment
+The application is fully containerized using **Docker**, making deployment and dependency management consistent across environments.
+
+---
 
 ## Tech Stack
 
-- *Pathway*: (version >11.0)
-- *Mistral LLM*
-- *Sentence-Transformers*
-- *Gemini API*
-- *Huggingface API*
-- *Streamlit*
-- *Docker*
+- **Pathway**: Version >11.0
+- **Mistral LLM**: Primary LLM for response generation
+- **Sentence-Transformers**: Semantic embedding and retrieval
+- **Gemini API**: Additional LLM/API component
+- **Hugging Face API**: Embedding and retrieval-related components
+- **Streamlit**: Frontend and chatbot interface
+- **Docker**: Containerization and deployment
 
 ---
 
-## Getting Started
+## System Architecture
 
-### Prerequisites
+The overall RAG workflow can be summarized as:
 
-Ensure you have the following installed:
-
-- *Docker*: To build and run the application in a containerized environment.
-
-### Installation 💻
-
-1. *Clone the repository*:
-   bash
-   git clone https://github.com/your-repo-link/ncert-helper-app.git
-   
-
-2. *Change into the project directory*:
-   bash
-   cd ncert-helper-app
-   
-
-3. **Add your API keys to the .env file**:
-   Open the .env file and add your API keys for Gemini and Huggingface:
-   bash
-   GEMINI_API_KEY=<YOUR_GEMINI_API_KEY>
-   HUGGINGFACE_API_KEY=<YOUR_HUGGINGFACE_API_KEY>
-   
-
-4. *Build and run the Docker image*:
-   bash
-   docker-compose up
-   
-
-   *Note*: Building the image may take 15-20 minutes. ⏳
-
-5. *Access the app*:
-   Open your browser and go to http://localhost:8501.
-
-6. *To stop the program*:
-   bash
-   docker-compose down
-   
-
-### Usage
-
-1. *Access the Application*: Open your browser and navigate to http://localhost:8501.
-2. *Ask a Question*: Enter an NCERT textbook question into the input field and click "Submit".
-3. *Receive an Answer*: The system retrieves relevant text using the retrieval component of the RAG pipeline and generates an answer using the LLM, which is then displayed in the UI.
-
-
-### Dependencies
-
-Dependencies are specified in the requirements.txt file, which will be automatically installed when the Docker container is built.
-
----
-
-## How It Works
-
-1. *Document Retrieval*: Using the sentence-transformers library, relevant chunks of text from NCERT textbooks are retrieved based on the student's query.
-2. *Generation*: The Gemini API is used to generate answers based on the retrieved context.
-3. *UI Interaction*: The student interacts with a simple, user-friendly Streamlit UI, submitting queries and receiving instant responses.
-
-
-## Conclusion
-
-This NCERT Helper Question Answering System leverages advanced AI techniques with a focus on student learning and ease of access. The integration of RAG, Gemini, Huggingface, and Pathway ensures high accuracy and fast responses, while Streamlit provides an interactive user interface. This project can be scaled further to cover more subjects and grades, making it an essential tool for modern educational platforms.
+```text
+                    ┌─────────────────────┐
+                    │   Uploaded Files    │
+                    │ PDF / Docs / Links  │
+                    │      / Text         │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ Document Processing │
+                    │      Pathway        │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ Text Chunking &     │
+                    │ Embedding Generation│
+                    │ Sentence-Transformers│
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ Semantic Retrieval  │
+                    │ Relevant Chunks     │
+                    └──────────┬──────────┘
+                               │
+                    ┌──────────▼──────────┐
+                    │   Query + Context   │
+                    │   Prompt Formation  │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │     Mistral LLM     │
+                    │ Answer Generation   │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │    Streamlit UI     │
+                    │ Human-readable      │
+                    │      Answer         │
+                    └─────────────────────┘
